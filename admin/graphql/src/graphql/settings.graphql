@@ -1,0 +1,252 @@
+query Settings($language: String) {
+  settings(language: $language) {
+    id
+    language
+    options {
+      siteTitle
+      siteSubtitle
+      currency
+      minimumOrderAmount
+      currencyToWalletRatio
+      signupPoints
+      maximumQuestionLimit
+      maxShopDistance
+      useOtp
+      useGoogleMap
+      useEnableGateway
+      useAi
+      isProductReview
+      freeShipping
+      freeShippingAmount
+      useCashOnDelivery
+      StripeCardOnly
+      paymentGateway {
+        title
+        name
+      }
+      defaultPaymentGateway
+      deliveryTime {
+        title
+        description
+      }
+      logo {
+        id
+        thumbnail
+        original
+      }
+      taxClass
+      shippingClass
+      seo {
+        metaTitle
+        metaDescription
+        ogTitle
+        ogDescription
+        ogImage {
+          id
+          thumbnail
+          original
+        }
+        twitterHandle
+        twitterCardType
+        metaTags
+        canonicalUrl
+      }
+      google {
+        isEnable
+        tagManagerId
+      }
+      facebook {
+        isEnable
+        appId
+        pageId
+      }
+      contactDetails {
+        socials {
+          icon
+          url
+        }
+        website
+        contact
+        location {
+          lat
+          lng
+          formattedAddress
+          city
+          state
+          country
+          zip
+        }
+      }
+      currencyOptions {
+        formation
+        fractions
+      }
+      guestCheckout
+      smsEvent {
+        admin {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+        }
+        vendor {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+        }
+        customer {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+        }
+      }
+      emailEvent {
+        admin {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+        }
+        vendor {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+          createReview
+          createQuestion
+        }
+        customer {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+          answerQuestion
+        }
+      }
+      server_info {
+        max_execution_time
+        max_input_time
+        memory_limit
+        post_max_size
+        upload_max_filesize
+      }
+    }
+  }
+  taxClasses {
+    id
+    name
+  }
+  shippingClasses {
+    id
+    name
+  }
+}
+
+mutation UpdateSettings($input: SettingsInput!) {
+  updateSettings(input: $input) {
+    id
+    language
+    options {
+      siteTitle
+      siteSubtitle
+      useOtp
+      useGoogleMap
+      useEnableGateway
+      useAi
+      isProductReview
+      freeShipping
+      freeShippingAmount
+      useCashOnDelivery
+      StripeCardOnly
+      paymentGateway {
+        title
+        name
+      }
+      defaultPaymentGateway
+      currency
+      minimumOrderAmount
+      maximumQuestionLimit
+      maxShopDistance
+      deliveryTime {
+        title
+        description
+      }
+      logo {
+        id
+        thumbnail
+        original
+      }
+      taxClass
+      shippingClass
+      seo {
+        metaTitle
+        metaDescription
+        ogTitle
+        ogDescription
+        ogImage {
+          id
+          thumbnail
+          original
+        }
+        twitterHandle
+        twitterCardType
+        metaTags
+        canonicalUrl
+      }
+      google {
+        isEnable
+        tagManagerId
+      }
+      facebook {
+        isEnable
+        appId
+        pageId
+      }
+      currencyOptions {
+        formation
+        fractions
+      }
+      guestCheckout
+      smsEvent {
+        admin {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+        }
+        vendor {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+        }
+        customer {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+        }
+      }
+      emailEvent {
+        admin {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+        }
+        vendor {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+          createReview
+          createQuestion
+        }
+        customer {
+          statusChangeOrder
+          refundOrder
+          paymentOrder
+          answerQuestion
+        }
+      }
+      server_info {
+        max_execution_time
+        max_input_time
+        memory_limit
+        post_max_size
+        upload_max_filesize
+      }
+    }
+  }
+}
